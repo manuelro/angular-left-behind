@@ -33,19 +33,19 @@ The directive can be used as a `class` and as an `attribute`, please refer to [A
 The directive comes bundled with multiple options, like custom classes names for the element and body, and leaving point definition; these options are detailed below:
 
 
-1. `left-behind` This is the directive itself. Its contents will be used as the classes for the tracked element.
+* `left-behind` This is the directive itself. Its contents will be used as the classes for the tracked element.
 
 ```html
 <div left-behind="element-class"></div>
 ```
 
-2. `lb-body-class` This sets the body class that will be used once the scroll has passed over the element.
+* `lb-body-class` This sets the body class that will be used once the scroll has passed over the element.
 
 ```html
 <div left-behind lb-body-class="body-class"></div>
 ```
 
-3. `lb-leave-after` This includes `element` height in the calculation, therefore the passed over event will be triggered at the end of the element rather than at the beginning of it. Its contents represent a number of pixels that will also be added during calculation.
+* `lb-leave-after` This includes `element` height in the calculation, therefore the passed over event will be triggered at the end of the element rather than at the beginning of it. Its contents represent a number of pixels that will also be added during calculation.
 
 ```html
 <div left-behind="element-class" lb-leave-after="100px"></div>
@@ -54,9 +54,9 @@ The directive comes bundled with multiple options, like custom classes names for
 <div left-behind="element-class" lb-leave-after="-100px"></div>
 ```
 
-4. `lb-leave-before` The same as `lb-leave-after`, its contents also will represent an amount of pixels.
+* `lb-leave-before` The same as `lb-leave-after`, its contents also will represent an amount of pixels.
 
-5. `lb-sticky` If the class you will add to the element or body changes the element position to fixed, then you should always use this option.
+* `lb-sticky` If the class you will add to the element or body changes the element position to fixed, then you should always use this option.
 
 
 
