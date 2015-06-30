@@ -13,7 +13,7 @@ Oftenly, as a developer, I want to trigger a certain CSS animation after scrolli
 
 See the example use below:
 
-[animation]: https://github.com/manuelro/angular-left-behind/blob/master/app/images/animation.gif "Angular Sticky Nav"
+![alt tag](https://raw.githubusercontent.com/manuelro/angular-left-behind/master/app/images/animation.gif)
 
 ##Use cases
 1. Scroll triggered sticky navbars or menus
