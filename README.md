@@ -29,6 +29,5 @@ The directive can be used as a `class` and as an `attribute`, please refer to [A
 ##Directive options
 The directive comes bundled with multiple options, like custom classes names for the element and body, and leaving point definition; these options are detailed below:
 
-###`left-behind`
-This is the directive itself. It's contents will be used as the classes for the tracked element.
+1.`left-behind`: This is the directive itself. It's contents will be used as the classes for the tracked element.
 
