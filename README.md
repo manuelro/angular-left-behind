@@ -62,5 +62,9 @@ The directive comes bundled with multiple options, like custom classes names for
 
 * `lb-sticky` If the class you will add to the element or body changes the element position to fixed, then you should always use this option.
 
+```html
+<div left-behind="element-class" lb-sticky></div>
+```
+
 
 
