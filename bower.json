@@ -2,7 +2,7 @@
   "name": "ng-left-behind",
   "description": "An AngularJS directive that allows you to add arbitrary classes to element and body once scroll has passed over a certain element",
   "main" : [
-    "dist/ng-left-behind.min.js"
+    "dist/left-behind.min.js"
   ],
   "version": "0.0.1",
   "dependencies": {
