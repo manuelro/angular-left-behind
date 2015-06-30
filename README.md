@@ -33,7 +33,7 @@ The directive can be used as a `class` and as an `attribute`, please refer to [A
 The directive comes bundled with multiple options, like custom classes names for the element and body, and leaving point definition; these options are detailed below:
 
 
-1. #####`left-behind` 
+1. `left-behind` 
 ⋅⋅⋅ This is the directive itself. Its contents will be used as the classes for the tracked element.
 
 ```html
@@ -41,7 +41,7 @@ The directive comes bundled with multiple options, like custom classes names for
 ```
 
 
-1. #####`lb-body-class`
+2. `lb-body-class`
 ⋅⋅⋅ This sets the body class that will be used once the scroll has passed over the element.
 
 ```html
@@ -49,7 +49,7 @@ The directive comes bundled with multiple options, like custom classes names for
 ```
 
 
-1. #####`lb-leave-after` 
+3. `lb-leave-after` 
 ⋅⋅⋅ This includes `element` height in the calculation, therefore the passed over event will be triggered at the end of the element rather than at the beginning of it. Its contents represent a number of pixels that will also be added during calculation.
 
 ```html
@@ -60,10 +60,10 @@ The directive comes bundled with multiple options, like custom classes names for
 ```
 
 
-1. #####`lb-leave-before`
+4. `lb-leave-before`
 ⋅⋅⋅ The same as `lb-leave-after`, its contents also will represent an amount of pixels.
 
-1. #####`lb-sticky`
+5. `lb-sticky`
 ⋅⋅⋅ If the class you will add to the element or body changes the element position to fixed, then you should always use this option.
 
 
