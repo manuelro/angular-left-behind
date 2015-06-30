@@ -126,7 +126,7 @@ angular.module('leftBehind')
 			var removeClasses = function (){
 				body.removeClass(leftBehindBodyClass);
 				element.removeClass(leftBehindClass);
-				console.log('removing');
+				// console.log('removing');
 			};
 
 			/**
@@ -135,16 +135,16 @@ angular.module('leftBehind')
 			 * @return {void}
 			 */
 			var hasBeenLeft = function (){
-				console.log('has been left is', checkIfHasBeenLeft());
+				// console.log('has been left is', checkIfHasBeenLeft());
 				if(checkIfHasBeenLeft())
 				{
 					addClasses();
-					console.log('_add');
+					// console.log('_add');
 				} 
 				else
 				{
 					removeClasses();
-					console.log('_rem');
+					// console.log('_rem');
 				}
 
 
@@ -165,7 +165,7 @@ angular.module('leftBehind')
 					
 				hasBeenLeft();
 				// outputData();
-				console.log('scroll');
+				// console.log('scroll');
 			};
 
 			/**
@@ -177,7 +177,7 @@ angular.module('leftBehind')
 				removeClasses();
 				updateRect();
 				hasBeenLeft();
-				console.log('resize');
+				// console.log('resize');
 				// outputData();
 			};
 
