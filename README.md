@@ -29,11 +29,15 @@ The directive can be used as a `class` and as an `attribute`, please refer to [A
 ##Directive options
 The directive comes bundled with multiple options, like custom classes names for the element and body, and leaving point definition; these options are detailed below:
 
-1. `left-behind` is the directive itself. Its contents will be used as the classes for the tracked element.
-	1.1 ```html
+`left-behind` 
+	is the directive itself. Its contents will be used as the classes for the tracked element.
+	```html
 		<div left-behind="element-class" lb-body-class="body-class"></div>
 	```
-2. `lb-body-class` sets the body class that will be used once the scroll has passed over the element.
-3. `lb-leave-after` includes `element` height in the calculation, therefore the passed over event will be triggered at the end of the element rather than at the beginning of it. Its contents represent a number of pixels that will also be added during calculation.
-4. `lb-leave-before` the same as `lb-leave-after`, its contents also will represent an amount of pixels.
+
+`lb-body-class` sets the body class that will be used once the scroll has passed over the element.
+
+`lb-leave-after` includes `element` height in the calculation, therefore the passed over event will be triggered at the end of the element rather than at the beginning of it. Its contents represent a number of pixels that will also be added during calculation.
+
+`lb-leave-before` the same as `lb-leave-after`, its contents also will represent an amount of pixels.
 
