@@ -34,8 +34,7 @@ The directive comes bundled with multiple options, like custom classes names for
 
 
 * `left-behind` This is the directive itself. Its contents will be used as the classes for the tracked element.
-
-```html
+**```html
 <div left-behind="element-class"></div>
 ```
 
