@@ -23,7 +23,10 @@ The directive can be used as a `class` and as an `attribute`, please refer to [A
 ##Use example
 ```html
 <!-- Simply add the directive to the element you want to track -->
-<div left-behind="element-class" lb-body-class="body-class" lb-leave-after="100px"></div>
+<div 
+	left-behind="element-class" 
+	lb-body-class="body-class" 
+	lb-leave-after="100px"></div>
 ```
 
 ##Directive options
