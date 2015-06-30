@@ -19,4 +19,4 @@ Oftenly, as a developer, I want to trigger a certain CSS animation after scrolli
 
 #The directive
 ##Use alternatives
-The directive can be used as a `class` and as an `attribute`, please refer to (https://docs.angularjs.org/guide/directive)[AngularJS Directive Docs] for further information regarding directives use.
+The directive can be used as a `class` and as an `attribute`, please refer to [AngularJS Directive Docs](https://docs.angularjs.org/guide/directive) for further information regarding directives use.
