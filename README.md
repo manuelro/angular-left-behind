@@ -32,6 +32,7 @@ The directive can be used as a `class` and as an `attribute`, please refer to [A
 ##Directive options
 The directive comes bundled with multiple options, like custom classes names for the element and body, and leaving point definition; these options are detailed below:
 
+
 ####`left-behind` 
 This is the directive itself. Its contents will be used as the classes for the tracked element.
 
@@ -57,6 +58,7 @@ This includes `element` height in the calculation, therefore the passed over eve
 <!-- Or with a negative value -->
 <div left-behind="element-class" lb-leave-after="-100px"></div>
 ```
+
 
 ####`lb-leave-before`
 The same as `lb-leave-after`, its contents also will represent an amount of pixels.
