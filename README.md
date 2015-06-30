@@ -13,7 +13,7 @@ Include `leftBehind` in your main application module as follows:
 
 ```javascript
 	angular
-		.module('myApp', ['leftBehind'])
+		.module('myApp', ['leftBehind']);
 ``` 
 
 ##What this does
