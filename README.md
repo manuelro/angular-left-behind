@@ -20,3 +20,15 @@ Oftenly, as a developer, I want to trigger a certain CSS animation after scrolli
 #The directive
 ##Use alternatives
 The directive can be used as a `class` and as an `attribute`, please refer to [AngularJS Directive Docs](https://docs.angularjs.org/guide/directive) for further information regarding directives use.
+##Use example
+```html
+<!-- Simply add the directive to the element you want to track -->
+<div left-behind lb-body-class="left-behind-element" lb-leave-after></div>
+```
+
+##Directive options
+The directive comes bundled with multiple options, like custom classes names for the element and body, and leaving point definition; these options are detailed below:
+
+###`left-behind`
+This is the directive itself. It's contents will be used as the classes for the tracked element.
+
