@@ -32,11 +32,13 @@ The directive can be used as a `class` and as an `attribute`, please refer to [A
 ##Directive options
 The directive comes bundled with multiple options, like custom classes names for the element and body, and leaving point definition; these options are detailed below:
 
-`left-behind` 
-	is the directive itself. Its contents will be used as the classes for the tracked element.
-	```html
-		<div left-behind="element-class" lb-body-class="body-class"></div>
-	```
+####`left-behind` 
+This is the directive itself. Its contents will be used as the classes for the tracked element.
+
+```html
+<div left-behind="element-class" lb-body-class="body-class"></div>
+```
+
 
 `lb-body-class` sets the body class that will be used once the scroll has passed over the element.
 
