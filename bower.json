@@ -32,6 +32,13 @@
     "bower_components",
     "node_modules",
     "test",
+    ".bowerrc",
+    ".editorconfig",
+    ".gitattributes",
+    ".gitignore",
+    ".jshintrc",
+    ".travis.yml",
+    ".yo-rc.json",
     "Gruntfile.js",
     "package.json"
   ],
