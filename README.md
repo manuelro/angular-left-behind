@@ -4,4 +4,6 @@ An AngularJS directive that let's you add arbitrary classes to body and element 
 
 ##Installation
 ###Using Bower
-If you are using Bower to manage your dependencies you can run `bower install angular-left-behind`
+If you are using Bower to manage your dependencies you can run 
+
+`bower install angular-left-behind`
