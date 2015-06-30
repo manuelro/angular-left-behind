@@ -9,7 +9,7 @@ If you are using Bower to manage your dependencies you can run:
 `bower install angular-left-behind`
 
 ##Usage
-Include `leftBehind` in your main application module as follows:
+Include `leftBehind` in your main application module as a dependency:
 
 ```javascript
 	angular
