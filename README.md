@@ -8,6 +8,14 @@ If you are using Bower to manage your dependencies you can run:
 
 `bower install angular-left-behind`
 
+##Usage
+Include `leftBehind` in your main application module as follows:
+
+```javascript
+	angular
+		.module('myApp', ['leftBehind'])
+``` 
+
 ##What this does
 Oftenly, as a developer, I want to trigger a certain CSS animation after scrolling down and pass over an element on the screen, this is what this directive does: it adds a custom optional class to the target element and another optional class to the `body` element. The rest can be handled via CSS3 animations and transitions.
 
