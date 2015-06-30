@@ -12,6 +12,7 @@ If you are using Bower to manage your dependencies you can run:
 Oftenly, as a developer, I want to trigger a certain CSS animation after scrolling down and pass over an element on the screen, this is what this directive does: it adds a custom optional class to the target element and another optional class to the `body` element. The rest can be handled via CSS3 animations and transitions.
 
 See the example use below:
+
 [animation]: https://github.com/manuelro/angular-left-behind/blob/master/app/images/animation.gif?raw=true "Angular Sticky Nav"
 
 ##Use cases
