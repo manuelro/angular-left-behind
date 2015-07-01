@@ -23,6 +23,9 @@ See the example use below:
 
 ![alt tag](https://raw.githubusercontent.com/manuelro/angular-left-behind/master/app/images/animation.gif)
 
+###Lightweight
+This directive does not use jQuery nor any third party framework other than Angular. All the logic in it weights only 1KB in size.
+
 ##Use cases
 1. Scroll triggered sticky navbars or menus
 2. Scroll triggered CSS animations
