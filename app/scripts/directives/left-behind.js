@@ -1,41 +1,41 @@
 'use strict';
-/**
- * @ngdoc function
- * @name blogApp.controller:TypectrlCtrl
- * @description
- * # TypectrlCtrl
- * Controller of the blogApp
- */
+
 angular.module('leftBehind')
-  .directive('leftBehind', function () {
-    return {
-    	restrict: 'AC',
-    	scope: false,
-    	link: function (scope, element, attrs){
 
-    		var leaveBefore, 
-    			leaveAfter, 
-    			leftBehindClass, 
-    			leftBehindBodyClass, 
-    			$window,
-    			body, 
-    			rect,
-    			isSticky,
-    			isDefinedLeaveAfter = false;
+/**
+ * Adds and removes a class from an element or body when scroll has passed over it
+ * @param  {closure} ) {	return     {		restrict: 'AC',		scope: false,		link: function (scope, element, attrs){			var leaveBefore, 			leaveAfter, 			leftBehindClass, 			leftBehindBodyClass, 			$window,			body, 			rect,			isSticky,			isDefinedLeaveAfter Returns true if lbLeaveAfter has been defined
+ * @return {object}   The directive object
+ */
+.directive('leftBehind', function () {
+	return {
+		restrict: 'AC',
+		scope: false,
+		link: function (scope, element, attrs){
 
-    		$window  = angular.element(window);
-    		body = angular.element(document.body);
-    		isSticky = angular.isDefined(attrs.lbSticky) || false;
+			var leaveBefore, 
+			leaveAfter, 
+			leftBehindClass, 
+			leftBehindBodyClass, 
+			$window,
+			body, 
+			rect,
+			isSticky,
+			isDefinedLeaveAfter = false;
+
+			$window  = angular.element(window);
+			body = angular.element(document.body);
+			isSticky = angular.isDefined(attrs.lbSticky) || false;
 
 
     		/**
     		 * Just sets rect values when the document has fully loaded
     		 * @return {void}
     		 */
-    		scope.$watch(function (){
-    			updateRect();
-    			hasBeenLeft();
-    		});
+    		 scope.$watch(function (){
+    		 	updateRect();
+    		 	hasBeenLeft();
+    		 });
 
 
     		/**
@@ -44,89 +44,88 @@ angular.module('leftBehind')
     		 * @param  {string} pointName Contains the leaving point name
     		 * @return {integer}          Returns the pixels the leaving point contains
     		 */
-    		var calculateLeavingPoint = function (pointName){
-    			var value = 0;
-    			
-    			if(angular.isDefined(attrs[pointName])) {
-    				
-    				var setPoint = function (pointName){
-    					return typeof attrs[pointName] === 'string' ? parseInt(attrs[pointName].replace(/px;?/, '')) || 0 : 0;
-    				};
+    		 var calculateLeavingPoint = function (pointName){
+    		 	var value = 0;
 
-    				switch (pointName){
-    					case 'lbLeaveAfter':
-    						isDefinedLeaveAfter = true;
-    						value = setPoint(pointName);
-    						break;
-    					default: 
-    						value = setPoint(pointName);
-    				}
+    		 	if(angular.isDefined(attrs[pointName])) {
 
-    			}
+    		 		var setPoint = function (pointName){
+    		 			return typeof attrs[pointName] === 'string' ? parseInt(attrs[pointName].replace(/px;?/, '')) || 0 : 0;
+    		 		};
 
-    			return value;
-    		};
+    		 		switch (pointName){
+    		 			case 'lbLeaveAfter':
+    		 			isDefinedLeaveAfter = true;
+    		 			value = setPoint(pointName);
+    		 			break;
+    		 			default: 
+    		 			value = setPoint(pointName);
+    		 		}
 
-    		leaveAfter = calculateLeavingPoint('lbLeaveAfter');
-			leaveBefore = calculateLeavingPoint('lbLeaveBefore');
+    		 	}
 
-			leftBehindClass = attrs.leftBehind || '';
-			leftBehindBodyClass = attrs.lbBodyClass || '';
+    		 	return value;
+    		 };
+
+    		 leaveAfter = calculateLeavingPoint('lbLeaveAfter');
+    		 leaveBefore = calculateLeavingPoint('lbLeaveBefore');
+
+    		 leftBehindClass = attrs.leftBehind || '';
+    		 leftBehindBodyClass = attrs.lbBodyClass || '';
 
 			/**
 			 * [calculatePoint description]
 			 * @return {[type]} [description]
 			 */
-    		var calculatePoint = function (){
-    			var t;
-    			t = $window[0].scrollY;
+			 var calculatePoint = function (){
+			 	var t;
+			 	t = $window[0].scrollY;
 
-    			t += isDefinedLeaveAfter ? rect.bottom + leaveAfter : rect.top - leaveBefore;
+			 	t += isDefinedLeaveAfter ? rect.bottom + leaveAfter : rect.top - leaveBefore;
 
-    			if(isSticky) 
-    			{
-					t = isDefinedLeaveAfter ? rect.lastBottom + leaveAfter : rect.lastTop - leaveBefore;
-    			}
-    				
+			 	if(isSticky) 
+			 	{
+			 		t = isDefinedLeaveAfter ? rect.lastBottom + leaveAfter : rect.lastTop - leaveBefore;
+			 	}
 
-    			return t;
-    		};
+
+			 	return t;
+			 };
 
     		/**
     		 * Checks whether the leaving point has been overpassed
     		 * @return {boolean}
     		 */
-			var checkIfHasBeenLeft = function (){
-				return $window[0].scrollY >= calculatePoint();
-			};
+    		 var checkIfHasBeenLeft = function (){
+    		 	return $window[0].scrollY >= calculatePoint();
+    		 };
 
 			/**
 			 * Updates the rect object
 			 * @return {void}
 			 */
-			var updateRect = function (){
-				rect = element[0].getBoundingClientRect();
-				rect.lastTop = $window[0].scrollY + rect.top;
-				rect.lastBottom = $window[0].scrollY + rect.bottom;
-			};
+			 var updateRect = function (){
+			 	rect = element[0].getBoundingClientRect();
+			 	rect.lastTop = $window[0].scrollY + rect.top;
+			 	rect.lastBottom = $window[0].scrollY + rect.bottom;
+			 };
 
 			/**
 			 * Adds classes accordingly
 			 * @return {void}
 			 */
-			var addClasses = function (){
-				body.addClass(leftBehindBodyClass);
-				element.addClass(leftBehindClass);
-			};
+			 var addClasses = function (){
+			 	body.addClass(leftBehindBodyClass);
+			 	element.addClass(leftBehindClass);
+			 };
 
 			/**
 			 * Removes classes accordingly
 			 * @return {void}
 			 */
-			var removeClasses = function (){
-				body.removeClass(leftBehindBodyClass);
-				element.removeClass(leftBehindClass);
-				// console.log('removing');
+			 var removeClasses = function (){
+			 	body.removeClass(leftBehindBodyClass);
+			 	element.removeClass(leftBehindClass);
 			};
 
 			/**
@@ -134,22 +133,15 @@ angular.module('leftBehind')
 			 * with respective functions
 			 * @return {void}
 			 */
-			var hasBeenLeft = function (){
-				// console.log('has been left is', checkIfHasBeenLeft());
+			 var hasBeenLeft = function (){
 				if(checkIfHasBeenLeft())
 				{
 					addClasses();
-					// console.log('_add');
 				} 
 				else
 				{
 					removeClasses();
-					// console.log('_rem');
 				}
-
-
-					
-				// outputData();
 			};
 
 			/**
@@ -157,15 +149,13 @@ angular.module('leftBehind')
 			 * scrolls down the page
 			 * @return {void}
 			 */
-			var onWindowScrollDo = function (){
-				if(!isSticky) 
-				{
-					updateRect();
-				}
-					
-				hasBeenLeft();
-				// outputData();
-				// console.log('scroll');
+			 var onWindowScrollDo = function (){
+			 	if(!isSticky) 
+			 	{
+			 		updateRect();
+			 	}
+
+			 	hasBeenLeft();
 			};
 
 			/**
@@ -173,47 +163,32 @@ angular.module('leftBehind')
 			 * resizes the window
 			 * @return {void}
 			 */
-			var onWindowResizeDo = function (){
-				removeClasses();
-				updateRect();
-				hasBeenLeft();
-				// console.log('resize');
-				// outputData();
+			 var onWindowResizeDo = function (){
+			 	removeClasses();
+			 	updateRect();
+			 	hasBeenLeft();
 			};
 
 			/**
 			 * Everything that will happen the scope is destroyed
 			 * @return {void}
 			 */
-			var onDestroyDo = function (){
-				removeClasses();
-				$window.off('scroll', onWindowScrollDo);
-				$window.off('resize', onWindowResizeDo);
-			};
-
-			/**
-			 * This just outputs data to ease development process
-			 * @return {void}
-			 */
-			/*var outputData = function (){
-				console.log(
-					$window[0].scrollY, 
-					rect.top,
-					calculatePoint(),
-					rect.lastTop,
-					rect.lastBottom);
-			};*/
+			 var onDestroyDo = function (){
+			 	removeClasses();
+			 	$window.off('scroll', onWindowScrollDo);
+			 	$window.off('resize', onWindowResizeDo);
+			 };
 
 			/**
 			 * Unbinding events
 			 */
-    		$window.bind('scroll', onWindowScrollDo);
-    		$window.bind('resize', onWindowResizeDo);
-    		scope.$on('$destroy', onDestroyDo);
+			 $window.bind('scroll', onWindowScrollDo);
+			 $window.bind('resize', onWindowResizeDo);
+			 scope.$on('$destroy', onDestroyDo);
 
-    	}
-    };
-  });
+			}
+		};
+	});
 
 
 
